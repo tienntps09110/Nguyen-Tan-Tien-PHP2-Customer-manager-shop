@@ -28,7 +28,9 @@
                         </div>
                         <div class="col-md-10">
                             <input type="text" name="firstName" class="form-control" required/>
+                            <span class="text-danger"><?php if(isset($_COOKIE["firstName"])) echo $_COOKIE["firstName"] ?></span>
                         </div>
+                        
                     </div>
                     <br/>
                     <div class="row">
@@ -37,6 +39,7 @@
                         </div>
                         <div class="col-md-10">
                             <input type="text" name="lastName" class="form-control" required/>
+                            <span class="text-danger"><?php if(isset($_COOKIE["lastName"])) echo $_COOKIE["lastName"] ?></span>
                         </div>
                     </div>
                     <br/>
@@ -67,6 +70,7 @@
                         </div>
                         <div class="col-md-10">
                             <input type="email" name="email" required/>
+                            <span class="text-danger"><?php if(isset($_COOKIE["email"])) echo $_COOKIE["email"] ?></span>
                         </div>
                     </div>
                     <br/>
@@ -76,6 +80,7 @@
                         </div>
                         <div class="col-md-10">
                             <input type="text" name="address" class="form-control" required/>
+                            <span class="text-danger"><?php if(isset($_COOKIE["address"])) echo $_COOKIE["address"] ?></span>
                         </div>
                     </div>
                     <br/>
@@ -85,6 +90,7 @@
                         </div>
                         <div class="col-md-10">
                             <input type="text" name="city" class="form-control" required/>
+                            <span class="text-danger"><?php if(isset($_COOKIE["city"])) echo $_COOKIE["city"] ?></span>
                         </div>
                     </div>
                     <br/>
@@ -94,6 +100,7 @@
                         </div>
                         <div class="col-md-10">
                             <input type="text" name="state" class="form-control" required/>
+                            <span class="text-danger"><?php if(isset($_COOKIE["state"])) echo $_COOKIE["state"] ?></span>
                         </div>
                     </div>
                     <br/>
@@ -102,7 +109,8 @@
                             Zip:
                         </div>
                         <div class="col-md-10">
-                            <input type="number" name="zip" class="form-control" required/>
+                            <input type="text" name="zip" class="form-control" required/>
+                            <span class="text-danger"><?php if(isset($_COOKIE["zip"])) echo $_COOKIE["zip"] ?></span>
                         </div>
                     </div>
                     <br/>

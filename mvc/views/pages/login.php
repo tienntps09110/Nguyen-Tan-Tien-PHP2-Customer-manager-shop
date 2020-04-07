@@ -9,13 +9,16 @@
             <form class="form-signin" name="login" method="post" action="../account/postLogin">
 
                 <h1 class="h3 mb-3 font-weight-bold text-primary text-center" style="padding-top: 50px">Đăng nhập</h1>
-                <input type="text" name="username" class="form-control" value="<?php if(isset($_COOKIE["user"])) echo $_COOKIE["user"] ?>" placeholder="Tên đăng nhập" required autofocus>
-                <p style="padding-top: 10px"></p>
-                <input type="password" name="password" class="form-control" value="<?php if(isset($_COOKIE["password"])) echo $_COOKIE["password"] ?>" placeholder="Mật khẩu" required>
+                <input type="text" name="username" class="form-control" value="<?php if(isset($_COOKIE["user"])) echo $_COOKIE["user"] ?>" placeholder="Tên đăng nhập" autofocus>
+                <span class="text-danger pt-1"><?php if(isset($_COOKIE["name"])) echo $_COOKIE["name"] ?></span>
+                <br>
+                <br>
+                <input type="password" name="password" class="form-control" value="<?php if(isset($_COOKIE["password"])) echo $_COOKIE["password"] ?>" placeholder="Mật khẩu">
+                <span class="text-danger pt-1"><?php if(isset($_COOKIE["pass"])) echo $_COOKIE["pass"] ?></span>
+                <br>
                 <input type="checkbox" name="selector" value="remember" checked> <b>Nhớ</b>
                 <div class="mb-3" style="padding-top: 30px">
                     <input type="submit" name="login" class="btn btn-info" value="Đăng nhập"/>
-                    <!-- <input type="button" name="register" class="btn btn-info" value="Đăng ký"/> -->
                 </div>
             </form>
         </div>

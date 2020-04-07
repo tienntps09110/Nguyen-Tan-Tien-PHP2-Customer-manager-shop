@@ -28,6 +28,21 @@
                 $password = $_POST["password"];
                 $test_user = $db->account($username);
                 foreach($test_user->fetchAll() as $user){}
+                if (empty($username)) {
+                    $this->setCookie("name", "Vui lòng nhập tên tài khoản", 1);
+                    $this->back();
+                    return false;
+                }
+                if(empty($password)){
+                    $this->setCookie("pass", "Vui lòng nhập mật khẩu", 1);
+                    $this->back();
+                    return false;
+                }
+                if (!preg_match("/^[a-zA-Z ]*$/",$username)) {
+                    $this->setCookie("name", "Tài khoản gồm các chữ cái không sử dụng kí tự đặt biệt và số", 1);
+                    $this->back();
+                    return false;
+                }
                 if(isset($user["password"])){
                     if(password_verify($password, $user["password"])){
                         $_SESSION['user'] = $user["user_name"];
